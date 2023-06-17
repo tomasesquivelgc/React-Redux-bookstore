@@ -1,10 +1,35 @@
 import React from 'react';
+import BookList from './components/BookList';
 
 function Home() {
+  const books = [{
+    title: 'The Hunger Games',
+    author: 'Suzanne Collins',
+    category: 'Action',
+    completionPercentage: '64%',
+    id: 1,
+    currentChapter: 'chapter 17',
+  },
+  {
+    title: 'Dune',
+    author: 'Franj Herbert',
+    category: 'Science fiction',
+    completionPercentage: '8%',
+    id: 2,
+    currentChapter: 'chapter 3: "A Lesson Learned"',
+  },
+  {
+    title: 'Capital in the Twenty-First Century',
+    author: 'Suzanne Collins',
+    category: 'Economy',
+    completionPercentage: '0%',
+    id: 3,
+    currentChapter: 'Introduction',
+  }];
   return (
     <div>
-      <h2>Home</h2>
-      <p>Welcome to the home page!</p>
+      <h2>My book list</h2>
+      <BookList books={books} onDelete={handleDeleteBook} />
     </div>
   );
 }
