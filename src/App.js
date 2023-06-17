@@ -1,31 +1,16 @@
+import React from 'react';
 import {
   BrowserRouter as Router, Route, Link, Routes,
 } from 'react-router-dom';
-
-function Home() {
-  return (
-    <div>
-      <h2>Home</h2>
-      <p>Welcome to the home page!</p>
-    </div>
-  );
-}
-
-function Categories() {
-  return (
-    <div>
-      <h2>Categories</h2>
-      <p>This is the categories page.</p>
-    </div>
-  );
-}
+import Home from './Home';
+import Categories from './Categories';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>Hello world</h1>
+          <h1>Bookstore</h1>
           <nav>
             <ul>
               <li>
