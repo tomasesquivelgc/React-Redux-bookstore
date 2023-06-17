@@ -1,5 +1,6 @@
 import React from 'react';
 import BookList from './components/BookList';
+import BookForm from './components/NewBookForm';
 
 function Home() {
   const [books, setBooks] = React.useState([
@@ -33,10 +34,15 @@ function Home() {
     setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
   };
 
+  const handleAddBook = (newBook) => {
+    setBooks((prevBooks) => [...prevBooks, newBook]);
+  };
+
   return (
     <div>
       <h2>My book list</h2>
       <BookList books={books} onDelete={handleDeleteBook} />
+      <BookForm onAddBook={handleAddBook} />
     </div>
   );
 }
