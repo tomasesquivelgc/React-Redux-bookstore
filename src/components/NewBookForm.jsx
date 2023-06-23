@@ -16,6 +16,7 @@ function BookForm() {
       itemId: uuidv4(),
       title,
       author,
+      category: 'action',
     };
 
     dispatch(addBook(book));
