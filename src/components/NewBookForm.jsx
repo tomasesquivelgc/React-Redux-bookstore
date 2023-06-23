@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/booksSlice';
 import AddButton from './AddButton';
 
@@ -12,6 +13,7 @@ function BookForm() {
     e.preventDefault(); // Prevent the default form submission behavior
 
     const book = {
+      itemId: uuidv4(), // Generate a unique itemId using uuid
       title,
       author,
     };
