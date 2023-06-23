@@ -10,18 +10,16 @@ function BookForm() {
   const dispatch = useDispatch();
 
   const handleAddBook = (e) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
 
     const book = {
-      itemId: uuidv4(), // Generate a unique itemId using uuid
+      itemId: uuidv4(),
       title,
       author,
     };
 
-    // Dispatch the addBook action with the book details
     dispatch(addBook(book));
 
-    // Reset the form inputs
     setTitle('');
     setAuthor('');
   };
@@ -37,7 +35,7 @@ function BookForm() {
         Author:
         <input type="text" id="author" value={author} onChange={(e) => setAuthor(e.target.value)} />
       </label>
-      <AddButton />
+      <AddButton onClick={handleAddBook} />
     </form>
   );
 }
