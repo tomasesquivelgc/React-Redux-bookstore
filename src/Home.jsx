@@ -3,7 +3,7 @@ import BookList from './components/BookList';
 import BookForm from './components/NewBookForm';
 
 function Home() {
-  const [books, setBooks] = React.useState([
+  const [books] = React.useState([
     {
       title: 'The Hunger Games',
       author: 'Suzanne Collins',
@@ -30,19 +30,11 @@ function Home() {
     },
   ]);
 
-  const handleDeleteBook = (bookId) => {
-    setBooks((prevBooks) => prevBooks.filter((book) => book.id !== bookId));
-  };
-
-  const handleAddBook = (newBook) => {
-    setBooks((prevBooks) => [...prevBooks, newBook]);
-  };
-
   return (
     <div>
       <h2>My book list</h2>
-      <BookList books={books} onDelete={handleDeleteBook} />
-      <BookForm onAddBook={handleAddBook} />
+      <BookList books={books} />
+      <BookForm />
     </div>
   );
 }

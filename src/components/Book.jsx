@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Book({
-  title, category, author, completionPercentage, currentChapter, onDelete,
+  title, category, author, completionPercentage, currentChapter,
 }) {
   return (
     <li>
@@ -25,7 +25,7 @@ function Book({
           Current Chapter:
           {currentChapter}
         </p>
-        <button type="button" onClick={onDelete}>Delete</button>
+        <button type="button">Delete</button>
       </div>
     </li>
   );
@@ -37,7 +37,6 @@ Book.propTypes = {
   author: PropTypes.string.isRequired,
   completionPercentage: PropTypes.number.isRequired,
   currentChapter: PropTypes.string.isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
 
 export default Book;

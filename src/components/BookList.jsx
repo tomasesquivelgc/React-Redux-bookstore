@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Book from './Book';
 
-function BookList({ books, onDelete }) {
+function BookList({ books }) {
   return (
     <ul>
       {books.map((book) => (
@@ -13,7 +13,6 @@ function BookList({ books, onDelete }) {
           author={book.author}
           completionPercentage={book.completionPercentage}
           currentChapter={book.currentChapter}
-          onDelete={() => onDelete(book.id)} // Assuming onDelete receives the book id
         />
       ))}
     </ul>
@@ -31,7 +30,6 @@ BookList.propTypes = {
       currentChapter: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  onDelete: PropTypes.func.isRequired,
 };
 
 export default BookList;
