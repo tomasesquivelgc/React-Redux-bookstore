@@ -32,29 +32,32 @@ export const removeBook = createAsyncThunk('books/removeBook', async (itemId) =>
 
 const initialState = [];
 
-const handleFetchBooksFulfilled = (state, action) => action.payload;
-
-const handleAddBookFulfilled = (state, action) => {
-  state.push(action.payload);
-};
-
-function handleRemoveBookFulfilled(state, action) {
-  return state.filter((book) => book.itemId !== action.payload);
-}
-
-const extraReducers = (builder) => {
-  builder
-    .addCase(fetchBooks.fulfilled, handleFetchBooksFulfilled)
-    .addCase(addBook.fulfilled, handleAddBookFulfilled)
-    .addCase(removeBook.fulfilled, handleRemoveBookFulfilled);
-};
-
 const booksSlice = createSlice({
   name: 'books',
   initialState,
   reducers: {},
-  extraReducers,
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchBooks.fulfilled, (state, action) => action.payload)
+      .addCase(addBook.fulfilled, (state, action) => {
+        const newBook = action.payload;
+        const bookProperties = {
+          title: newBook.title,
+          author: newBook.author,
+          category: newBook.category,
+        };
+        state[newBook.itemId] = [bookProperties];
+      })
+      .addCase(removeBook.fulfilled, (state, action) => {
+        const deletedBookId = action.payload;
+        const ids = Object.keys(state);
+        ids.forEach((bookId) => {
+          if (bookId === deletedBookId.toString()) {
+            delete state[bookId];
+          }
+        });
+      });
+  },
 });
-
 export const selectBooks = (state) => state.books;
 export default booksSlice.reducer;

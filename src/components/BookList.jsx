@@ -11,8 +11,12 @@ function BookList() {
     dispatch(fetchBooks());
   }, [dispatch]);
 
-  const handleRemoveBook = (itemId) => {
-    dispatch(removeBook(itemId));
+  const handleRemoveBook = async (itemId) => {
+    try {
+      await dispatch(removeBook(itemId));
+    } catch (error) {
+      console.error('Failed to remove book:', error);
+    }
   };
 
   return (
