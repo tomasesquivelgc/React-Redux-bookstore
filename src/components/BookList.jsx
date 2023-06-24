@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
-import { selectBooks, removeBook } from '../redux/books/booksSlice';
+import { selectBooks, fetchBooks, removeBook } from '../redux/books/booksSlice';
 
 function BookList() {
   const books = useSelector(selectBooks);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
 
   const handleRemoveBook = (itemId) => {
     dispatch(removeBook(itemId));
@@ -13,7 +17,7 @@ function BookList() {
 
   return (
     <ul>
-      {books.map((book) => (
+      {Object.values(books).map((bookGroup) => bookGroup.map((book) => (
         <Book
           key={book.itemId}
           itemId={book.itemId}
@@ -22,7 +26,7 @@ function BookList() {
           category={book.category}
           onRemove={handleRemoveBook}
         />
-      ))}
+      )))}
     </ul>
   );
 }
