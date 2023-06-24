@@ -13,9 +13,9 @@ function BookList() {
 
   const handleRemoveBook = async (itemId) => {
     try {
-      await dispatch(removeBook(itemId));
+      dispatch(removeBook(itemId));
     } catch (error) {
-      console.error('Failed to remove book:', error);
+      throw new Error('Failed to remove book:', error);
     }
   };
 
