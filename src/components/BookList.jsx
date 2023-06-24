@@ -22,7 +22,7 @@ function BookList() {
   return (
     <ul>
       {Object.keys(books).map((itemId) => {
-        const book = books[itemId][0]; // Assuming each item_id has only one book object
+        const book = books[itemId][0];
         return (
           <Book
             key={itemId}

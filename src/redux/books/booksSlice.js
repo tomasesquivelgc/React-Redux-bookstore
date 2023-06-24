@@ -40,7 +40,7 @@ const booksSlice = createSlice({
     builder
       .addCase(fetchBooks.fulfilled, (state, action) => action.payload)
       .addCase(addBook.fulfilled, (state, action) => {
-        const newBook = action.payload;
+        const newBook = action.meta.arg;
         const bookProperties = {
           title: newBook.title,
           author: newBook.author,
