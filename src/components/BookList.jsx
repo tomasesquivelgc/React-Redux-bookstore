@@ -17,16 +17,19 @@ function BookList() {
 
   return (
     <ul>
-      {Object.values(books).map((bookGroup) => bookGroup.map((book) => (
-        <Book
-          key={book.itemId}
-          itemId={book.itemId}
-          title={book.title}
-          author={book.author}
-          category={book.category}
-          onRemove={handleRemoveBook}
-        />
-      )))}
+      {Object.keys(books).map((itemId) => {
+        const book = books[itemId][0]; // Assuming each item_id has only one book object
+        return (
+          <Book
+            key={itemId}
+            itemId={itemId}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+            onRemove={handleRemoveBook}
+          />
+        );
+      })}
     </ul>
   );
 }
