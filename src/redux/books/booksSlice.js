@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const myAPI = "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lMSi2kI7vwxiICUE8RTk";
+
 const initialState = [
   {
     itemId: 'item1',
