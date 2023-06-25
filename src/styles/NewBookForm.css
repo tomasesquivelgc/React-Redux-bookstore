@@ -14,7 +14,7 @@
   width: 10.875rem;
   height: 1.5rem;
   margin: 1rem 32.75rem 1rem 0;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem;
   font-weight: bold;
   font-stretch: normal;
@@ -45,5 +45,5 @@
   border-radius: 3px;
   background-color: #0290ff;
   border: none;
-  color: #ffffff;
+  color: #fff;
 }

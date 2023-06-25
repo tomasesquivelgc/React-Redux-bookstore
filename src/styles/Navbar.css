@@ -3,7 +3,7 @@
   align-items: center;
   padding: 0.438rem 3.188rem 0.688rem 3.25rem;
   justify-content: space-between;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .linkContainer {
@@ -14,7 +14,7 @@
 .navbar h1 {
   width: 17rem;
   height: 2.313rem;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.875rem;
   font-weight: bold;
   font-stretch: normal;
@@ -35,7 +35,7 @@
   width: 3.688rem;
   height: 1rem;
   margin: 1.125rem 2.563rem 0.688rem 0;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 0.813rem;
   font-weight: normal;
   font-stretch: normal;
