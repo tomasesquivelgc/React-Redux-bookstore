@@ -25,11 +25,19 @@ function Book({
           <button type="button" className="tinyButton">Edit</button>
         </div>
       </div>
-      <div>
+      <div className="section2">
         <img src={circle} alt="progress" className="progress-image" />
-        <span className="percent-Complete">64%</span>
+        <div>
+          <span className="percent-Complete">64%</span>
+          <p className="completed">Completed</p>
+        </div>
       </div>
-
+      <div className="big-division" />
+      <div>
+        <p className="current-Chapter-Text">CURRENT CHAPTER</p>
+        <p className="current-Chapter-number">CHAPTER 17</p>
+        <button type="button" className="update-button">UPDATE PROGRESS</button>
+      </div>
     </li>
   );
 }
