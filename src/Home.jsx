@@ -9,7 +9,6 @@ function Home() {
 
   return (
     <div>
-      <h2>My book list</h2>
       <BookList books={books} />
       <BookForm />
     </div>

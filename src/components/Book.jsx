@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RemoveButton from './RemoveButton';
+import '../styles/Book.css';
+import circle from '../images/progress.svg';
 
 function Book({
   itemId, title, category, author, onRemove,
@@ -10,21 +12,24 @@ function Book({
   };
 
   return (
-    <li>
-      <div>
-        <h3>{title}</h3>
-        <p>
-          Category:
-          {' '}
-          {category}
-        </p>
-        <p>
-          Author:
-          {' '}
-          {author}
-        </p>
-        <RemoveButton onClick={handleRemove} />
+    <li className="bookItem">
+      <div className="section1">
+        <p className="category">{category}</p>
+        <h2 className="title">{title}</h2>
+        <p className="author">{author}</p>
+        <div>
+          <button type="button" className="tinyButton">Comments</button>
+          <span>|</span>
+          <RemoveButton onClick={handleRemove} />
+          <span>|</span>
+          <button type="button" className="tinyButton">Edit</button>
+        </div>
       </div>
+      <div>
+        <img src={circle} alt="progress" className="progress-image" />
+        <span className="percent-Complete">64%</span>
+      </div>
+
     </li>
   );
 }

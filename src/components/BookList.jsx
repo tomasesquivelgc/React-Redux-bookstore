@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import { selectBooks, fetchBooks, removeBook } from '../redux/books/booksSlice';
+import '../styles/BookList.css';
 
 function BookList() {
   const books = useSelector(selectBooks);
@@ -20,21 +21,23 @@ function BookList() {
   };
 
   return (
-    <ul>
-      {Object.keys(books).map((itemId) => {
-        const book = books[itemId][0];
-        return (
-          <Book
-            key={itemId}
-            itemId={itemId}
-            title={book.title}
-            author={book.author}
-            category={book.category}
-            onRemove={handleRemoveBook}
-          />
-        );
-      })}
-    </ul>
+    <div className="bookContainer">
+      <ul className="list">
+        {Object.keys(books).map((itemId) => {
+          const book = books[itemId][0];
+          return (
+            <Book
+              key={itemId}
+              itemId={itemId}
+              title={book.title}
+              author={book.author}
+              category={book.category}
+              onRemove={handleRemoveBook}
+            />
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 

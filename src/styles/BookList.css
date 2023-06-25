@@ -1,0 +1,17 @@
+.bookContainer {
+  margin: auto auto;
+  background-color: #fafafa;
+}
+
+.list {
+  margin: auto auto;
+  border-bottom: solid 1px #e8e8e8;
+  width: 70%;
+  padding-inline-start: 0;
+  padding-top: 1px;
+  padding-bottom: 1%;
+}
+
+.list li {
+  list-style-type: none;
+}
