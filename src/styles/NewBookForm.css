@@ -1,0 +1,49 @@
+.form-container {
+  margin: auto auto;
+  background-color: #fafafa;
+}
+
+.form {
+  margin-left: 5%;
+  padding-inline-start: 0;
+  padding-top: 1px;
+  margin-bottom: 5%;
+}
+
+.form h2 {
+  width: 10.875rem;
+  height: 1.5rem;
+  margin: 1rem 32.75rem 1rem 0;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #888;
+}
+
+.book-title {
+  padding: 0.813rem 20.688rem 0.813rem 1.063rem;
+  margin: 1rem 2.125rem 0 0;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+}
+
+.book-author {
+  padding: 0.813rem 0.938rem 0.813rem 1rem;
+  margin: 1rem 2.125rem 0 0;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+}
+
+.add-button {
+  width: 11.5rem;
+  padding: 0.813rem 0.938rem 0.813rem 1rem;
+  margin: 1rem 2.125rem 0 0;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  color: #ffffff;
+}
