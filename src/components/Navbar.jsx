@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Navbar.css';
 import userIcon from '../images/userIcon.svg';
 
 function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar montsFont backgroundWhite borderBottomWhite">
       <div className="linkContainer">
-        <h1>Bookstore CMS</h1>
+        <h1 className="blueText">Bookstore CMS</h1>
         <ul className="navLinks">
           <li>
-            <Link to="/">BOOKS</Link>
+            <Link to="/" className="blackText montsFont">BOOKS</Link>
           </li>
           <li>
-            <Link to="/categories">CATEGORIES</Link>
+            <Link to="/categories" className="blackText montsFont">CATEGORIES</Link>
           </li>
         </ul>
       </div>

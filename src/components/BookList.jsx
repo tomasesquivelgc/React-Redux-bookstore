@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import { selectBooks, fetchBooks, removeBook } from '../redux/books/booksSlice';
-import '../styles/BookList.css';
 
 function BookList() {
   const books = useSelector(selectBooks);
@@ -22,7 +21,7 @@ function BookList() {
 
   return (
     <div className="bookContainer">
-      <ul className="list">
+      <ul className="list borderBottomWhite">
         {Object.keys(books).map((itemId) => {
           const book = books[itemId][0];
           return (
