@@ -20,21 +20,23 @@ function BookList() {
   };
 
   return (
-    <ul>
-      {Object.keys(books).map((itemId) => {
-        const book = books[itemId][0];
-        return (
-          <Book
-            key={itemId}
-            itemId={itemId}
-            title={book.title}
-            author={book.author}
-            category={book.category}
-            onRemove={handleRemoveBook}
-          />
-        );
-      })}
-    </ul>
+    <div className="bookContainer">
+      <ul className="list borderBottomWhite">
+        {Object.keys(books).map((itemId) => {
+          const book = books[itemId][0];
+          return (
+            <Book
+              key={itemId}
+              itemId={itemId}
+              title={book.title}
+              author={book.author}
+              category={book.category}
+              onRemove={handleRemoveBook}
+            />
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 
